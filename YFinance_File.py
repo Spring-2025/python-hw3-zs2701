@@ -1,8 +1,9 @@
 #GetReturns
 import yfinance as yf
 import pandas as pd
+import numpy as np
 
-def YahooData2returns(symbol='GS'):
+def YahooData2returns(data):
   data=yf.download(symbol,auto_adjust=0)
   prices=data['Adj Close'].values
   returns=get_returns(prices)
