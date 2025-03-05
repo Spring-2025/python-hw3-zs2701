@@ -15,7 +15,3 @@ def get_returns(pricevec):
   returns=ratiovec-1
   return returns
 
-returns_GS=YahooData2returns('GS')
-
-returns_df=pd.DataFrame(returns_GS,columns=["Daily Return"])
-print(returns_df.head())
