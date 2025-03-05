@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-def VaR(r,confidence,principal=100):
+def VaR(r,confidence,principal=1):
   alpha=1-confidence
   var_percentile=np.percentile(r,alpha*100)
   VaR_value=abs(var_percentile)*principal
@@ -14,7 +14,7 @@ def percent_var(r,confidence):
   plt.hist(r,bins=50,alpha=0.75)
   plt.show()
 
-  out=np.percentile(r,(1-alpha)*100)
+  out=np.percentile(r,alpha*100)
   return abs(out)
 
 returns=np.random.normal(0,1,10000)
